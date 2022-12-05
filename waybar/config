@@ -1,0 +1,101 @@
+{
+  "layer": "top ",
+  "mode": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "position": "top",
+  "height": 34,
+  "width": "",
+  "spacing": 0,
+  "margin": 0,
+  "margin-top": 5,
+  "margin-bottom": 0,
+  "margin-left": 5,
+  "margin-right": 5,
+  "fixed-center": true,
+  "ipc": true,
+  "bar_id": "bar-0",
+
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["sway/language", "pulseaudio", "network", "battery", "clock"],
+  
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+    },
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": ""
+      },
+    },
+
+  "sway/window": {
+    "max-length": 50,
+    },
+
+  "sway/language": {
+      "format": "{}",
+      "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+      "tooltip-format": "{long}"
+    },
+
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "{:%d %B %Y}"
+    },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [""],
+    "on-scroll-up": "light -A 5",
+    "on-scroll-down": "light -U 5",
+    },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+	"states": {
+		"warning": 30,
+		"critical": 15
+	},
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    },
+
+  "network": {
+    "interface": "wlp3s0f0",
+    "format": " {ifname} ",
+    "format-ethernet": "{ifname}",
+    "format-wifi": "  {signalStrength}%",
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": "睊 ",
+    "format-alt": "Speed: {bandwidthDownBits}",
+	"tooltip-format-wifi": "{essid}",
+	"tooltip-format-disconnected": "Disconnected",
+	"max-length":25
+    },
+
+  "pulseaudio": {
+	"tooltip": false,
+    //"format": "{icon} {volume}% {format_source}",
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
+    "format-source": " {volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+      },
+   // "on-click": "pavucontrol"
+    },
+ } 
