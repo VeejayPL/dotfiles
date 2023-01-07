@@ -17,7 +17,7 @@
   "bar_id": "bar-0",
 
   "modules-left": ["sway/workspaces"],
-  "modules-center": ["sway/window"],
+  "modules-center": ["custom/spotify"],
   "modules-right": ["sway/language", "pulseaudio", "network", "battery", "clock"],
   
   "sway/workspaces": {
@@ -97,5 +97,16 @@
       "default": ["", "", ""]
       },
    // "on-click": "pavucontrol"
+    },
+   
+   "custom/spotify": {
+    "format": "  {}",
+	"exec": "$HOME/.config/waybar/scripts/spotify.sh",
+	"interval": 1,
+	"smooth-scrolling-threshold": 20,
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous",
+	"exec-if": "pgrep spotify"
     },
  } 
