@@ -3,7 +3,7 @@
 
 " GENERAL SETTINGS ----------------------------------------------------{{{
 syntax enable
-
+packloadall "For Prettier
 filetype on
 filetype plugin on
 filetype indent on
