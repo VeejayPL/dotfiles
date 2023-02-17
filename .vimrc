@@ -3,7 +3,7 @@
 
 " GENERAL SETTINGS ----------------------------------------------------{{{
 syntax enable
-packloadall "For Prettier
+
 filetype on
 filetype plugin on
 filetype indent on
@@ -31,6 +31,10 @@ set cursorline
 set signcolumn=number
 set nocompatible
 set foldmethod=marker
+
+"For lightline
+set laststatus=2
+set noshowmode
 "}}}
 " THEME --------------------------------------------------------------------------------{{{
 set termguicolors
