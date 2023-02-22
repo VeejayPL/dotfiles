@@ -70,6 +70,7 @@ endfunction
 " MAPPINGS -----------------------------------------------------------------{{{
 inoremap jj <Esc>
 nnoremap <space> :
+nmap <TAB> <C-W>w
 
 " ALE Previous / Next Error or Warning
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
