@@ -78,5 +78,5 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "}}}
 " SNIPPETS ------------------------------------------------------------------{{{
 " HTML boilerplate
-nnoremap ,html :-1read $HOME/.vim/.base.html<CR>3jwf>a
+nnoremap ,html :-1read $HOME/.vim/.base.html<CR>6jwf>a
 "}}}
