@@ -84,7 +84,8 @@ nnoremap ,html :-1read $HOME/.vim/.base.html<CR>6jwf>a
 let g:ale_linters_explicit = 1
 " }}}
 " NERDCommenter -----------------------------------------------------{{{
-"
+" Add spaces after comment delimiters
+let g:NERDSpaceDelims = 1
 " }}}
 " Lightline ---------------------------------------------------------{{{
 "
