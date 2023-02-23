@@ -32,11 +32,9 @@ set signcolumn=number
 set nocompatible
 set foldmethod=marker
 
-"For lightline
+" For lightline
 set laststatus=2
 set noshowmode
-
-let g:ale_linters_explicit = 1
 "}}}
 " THEME --------------------------------------------------------------------------------{{{
 set termguicolors
@@ -81,3 +79,14 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " HTML boilerplate
 nnoremap ,html :-1read $HOME/.vim/.base.html<CR>6jwf>a
 "}}}
+" PLUGINS -----------------------------------------------------------{{{
+" ALE ---------------------------------------------------------------{{{
+let g:ale_linters_explicit = 1
+" }}}
+" NERDCommenter -----------------------------------------------------{{{
+"
+" }}}
+" Lightline ---------------------------------------------------------{{{
+"
+" }}}
+" }}}
