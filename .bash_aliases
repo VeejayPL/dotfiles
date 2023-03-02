@@ -6,6 +6,7 @@ alias ...='cd ../..'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
+alias gp='git push'
 #}}}
 # GIT DOTFILES -----------------------------------------{{{
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
