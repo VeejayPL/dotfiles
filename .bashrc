@@ -56,17 +56,27 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# for a remote session; has to be in .bashrc on remote machine; best to copy
+# config to remote when possible 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  if [ "$color_prompt" = yes ]; then
+    host="\[\033[0;33m\](\h)"
+  else
+    host="@\h"
+  fi
+fi
+
 if [ "$color_prompt" = yes ]; then
 # Original prompt
    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 # Fancy prompt
    # PS1="\n \[\033[0;34m\]╭─\[\033[0;31m\]\[\033[1;30m\]\[\033[41m\] \u@\h \[\033[0m\]\[\033[0;31m\]\[\033[44m\]\[\033[0;34m\]\[\033[44m\]\[\033[0;30m\]\[\033[44m\] \w \[\033[0m\]\[\033[0;34m\] \n \[\033[0;34m\]╰ \[\033[1;36m\]\$ \[\033[0m\]"
 # Minimal prompt   
-    PS1='\[\033[0;36m\] \u \[\033[0;35m\]\w \n\[\033[1;32m\] \[\033[0m\] '
+    PS1="\[\033[0;36m\] \u${host} \[\033[0;35m\]\w \n\[\033[1;32m\] \[\033[0m\] "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\u@${host}:\w\$ "
 fi
-unset color_prompt force_color_prompt
+unset color_prompt force_color_prompt host
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -121,3 +131,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
