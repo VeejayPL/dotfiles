@@ -56,15 +56,15 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# for a remote session; has to be in .bashrc on remote machine; best to copy
-# config to remote when possible 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  if [ "$color_prompt" = yes ]; then
-    host="\[\033[0;33m\](\h)"
-  else
-    host="@\h"
-  fi
-fi
+# for a remote session; to turn it on change PS1 single quotes to double quotes
+# and place the variable
+# if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  # if [ "$color_prompt" = yes ]; then
+    # host="\[\033[0;33m\](\h)"
+  # else
+    # host="@\h"
+  # fi
+# fi
 
 if [ "$color_prompt" = yes ]; then
 # Original prompt
@@ -72,16 +72,16 @@ if [ "$color_prompt" = yes ]; then
 # Fancy prompt
    # PS1="\n \[\033[0;34m\]╭─\[\033[0;31m\]\[\033[1;30m\]\[\033[41m\] \u@\h \[\033[0m\]\[\033[0;31m\]\[\033[44m\]\[\033[0;34m\]\[\033[44m\]\[\033[0;30m\]\[\033[44m\] \w \[\033[0m\]\[\033[0;34m\] \n \[\033[0;34m\]╰ \[\033[1;36m\]\$ \[\033[0m\]"
 # Minimal prompt   
-    PS1="\[\033[0;36m\] \u${host} \[\033[0;35m\]\w \n\[\033[1;32m\] \[\033[0m\] "
+    PS1='\[\033[0;36m\] \u \[\033[0;35m\]\w\n\[\033[0;33m\] \$\[\033[0m\] '
 else
-    PS1="${debian_chroot:+($debian_chroot)}\u@${host}:\w\$ "
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt host
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u:\w\a\]$PS1"
     ;;
 *)
     ;;
