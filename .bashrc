@@ -30,6 +30,9 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# set directory depth level for prompt
+PROMPT_DIRTRIM=3
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -56,15 +59,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# for a remote session; to turn it on change PS1 single quotes to double quotes
-# and place the variable
-# if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  # if [ "$color_prompt" = yes ]; then
-    # host="\[\033[0;33m\](\h)"
-  # else
-    # host="@\h"
-  # fi
-# fi
+# for a remote session; to know the machine name, paste the below in PS1
+# \[\033[0;33m\](\h)
+
+# git prompt
+[ -f ~/.git-prompt.sh ] && . ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto"
 
 if [ "$color_prompt" = yes ]; then
 # Original prompt
@@ -72,9 +74,9 @@ if [ "$color_prompt" = yes ]; then
 # Fancy prompt
    # PS1="\n \[\033[0;34m\]╭─\[\033[0;31m\]\[\033[1;30m\]\[\033[41m\] \u@\h \[\033[0m\]\[\033[0;31m\]\[\033[44m\]\[\033[0;34m\]\[\033[44m\]\[\033[0;30m\]\[\033[44m\] \w \[\033[0m\]\[\033[0;34m\] \n \[\033[0;34m\]╰ \[\033[1;36m\]\$ \[\033[0m\]"
 # Minimal prompt   
-    PS1='\[\033[0;36m\] \u \[\033[0;35m\]\w\n\[\033[0;33m\] \$\[\033[0m\] '
+    PS1='\[\033[0;36m\] \u \[\033[0;35m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\n\[\033[0;33m\] \$\[\033[0m\] '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)" \$ '
 fi
 unset color_prompt force_color_prompt host
 
