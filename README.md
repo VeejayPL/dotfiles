@@ -11,19 +11,20 @@ At this moment main upgrades are
 
 You can take a look at screenshots below to get the feeling of what's inside.
 
-For storing dotfiles I use a bare repo set to working tree $HOME. You can just
-git clone --bare and set an alias for git --git-dir=$HOME/.dotfiles --work-tree=$HOME. Make sure to back things up first, just in case :smirk:
+For storing dotfiles, I use a bare repo set to working tree `$HOME`. The trick here
+is to make an alias with `git --git-dir=$HOME/.<folder-name> --work-tree=$HOME` and setting `<alias-name> --local status.showUntrackedFiles no`.
 
-## Screenshots
+You can also have branches for specific machines.
 
-1. Standard prompt with set git and folder depth 
+Feel free to copy but, as always, back your stuff up first :smirk:
 
-![Standard prompt](https://github.com/VeejayPL/dotfiles/blob/main/screenshots/prompt-reg.png)
+## Screenshot
 
-2. Prompt on remote connection on tmux
+### Tmux / Prompt / Theme
 
-![Tmux prompt](https://github.com/VeejayPL/dotfiles/blob/main/screenshots/prompt-tmux.png)
+1. Theme for Terminal / VIM / Tmux - [Catppuccin](https://github.com/catppuccin/catppuccin)
+2. Top right corner - local prompt with integrated [git-prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) and set path depth
+3. Bottom right corner - prompt for remote connection when you have a machine
+   you connect often
 
-3. VIM
-
-![VIM](https://github.com/VeejayPL/dotfiles/blob/main/screenshots/vim.png)
+![Prompt collection](https://github.com/VeejayPL/dotfiles/blob/main/screenshots/screen.png)
