@@ -43,6 +43,7 @@ colo catppuccin_macchiato
 " LINTER STATUSLINE --------------------------------------------{{{
 " Set linter error / warning count in lightline
 let g:lightline = {
+  \ 'colorscheme': 'catppuccin_macchiato',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'filename', 'modified', 'linterstatus' ] ]
