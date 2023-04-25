@@ -1,0 +1,17 @@
+VIM PLUGINS ------------------------------------------------{{{
+  Ale
+  Lightline
+  Nerdcommenter
+}}}
+LINTERS & FIXERS ----------------------------------------------------{{{
+  shellcheck
+  yamllint
+  eslint
+  prettier
+  flake8 - Python
+}}}
+TOOLS --------------------------------------------------------------{{{
+  tmux / tpm
+  git-prompt
+  neofetch
+}}}
