@@ -1,0 +1,50 @@
+#whiskermenu-button {
+  background-color: #181b28;
+  margin: 2px;
+  border-radius: 6px;
+}
+
+#whiskermenu-button:hover {
+  background-color: #c50ed2;
+}
+
+#whiskermenu-button:checked {
+  background-color: #c50ed2;
+  border: none;
+}
+
+.xfce4-panel .tasklist .toggle {
+  margin: 2px;
+  border-radius: 6px;
+}
+
+.xfce4-panel .tasklist .toggle:checked {
+  background-color: #c50ed2;
+  color: black;
+  border: solid 2px #c50ed2;
+  }
+
+#pulseaudio-button, #xfce4-power-manager-plugin, #sn-button, #xfce4-notification-plugin, #clock-button {
+  background-color: #181b28;
+  color: white;
+  margin: 2px 0 2px 0;
+  padding: 5px;
+}
+
+#pulseaudio-button:hover, #xfce4-power-manager-plugin:hover, #sn-button:hover, #xfce4-notification-plugin:hover, #clock-button:hover {
+  background-color: #c50ed2;
+}
+
+#pulseaudio-button:checked, #xfce4-power-manager-plugin:checked, #sn-button:checked, #xfce4-notification-plugin:checked, #clock-button:checked {
+  background-color: #c50ed2;
+}
+
+#sn-button {
+  border-radius: 6px 0 0 6px;
+}
+
+#clock-button {
+  font-size: 16px;
+  border-radius: 0 6px 6px 0;
+  margin-right: 5px;
+}
