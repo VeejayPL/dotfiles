@@ -9,16 +9,20 @@ At this moment main upgrades are
 - aliases,
 - etc.
 
+Theme - [Sweet theme](https://github.com/EliverLara/Sweet) with [Sweet
+folders](https://github.com/EliverLara/Sweet-folders)
+
+Cursors - [Oreo](https://github.com/varlesh/oreo-cursors)
+
+Few lines in gtk.css for xfce panel to match the theme.
+
 You can take a look at screenshots below to get the feeling of what's inside.
 
-For storing dotfiles, I use a bare repo set to working tree `$HOME`. The trick here
-is to make an alias with `git --git-dir=$HOME/.<folder-name> --work-tree=$HOME` and setting `<alias-name> --local status.showUntrackedFiles no`.
+## Screenshots
 
-You can also have branches for specific machines.
+### Main screen
 
-Feel free to copy but, as always, back your stuff up first :smirk:
-
-## Screenshot
+![Prompt collection](https://github.com/VeejayPL/dotfiles/blob/main/screenshots/main.png)
 
 ### Tmux / Prompt / Theme
 
