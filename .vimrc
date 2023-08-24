@@ -8,6 +8,11 @@ filetype on
 filetype plugin on
 filetype indent on
 
+"Highlight front matter (for 11ty and similar SSGs)
+let g:vim_markdown_json_frontmatter=1
+let g:vim_markdown_toml_fronmatter=1
+let g:vim_markdown_frontmatter=1
+
 " Finding files
 " Provides tab-completion for all file-related tasks
 set path+=**
